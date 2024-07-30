@@ -15,7 +15,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-//     baseUrl: "inshi-notes.zephyr-zdz.space",
+    baseUrl: "inshi-notes.zephyr-zdz.space",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     theme: {
