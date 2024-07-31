@@ -17,6 +17,7 @@ Welcome to my notes on entrance exams of CS Master program, IST, UTokyo and CBMS
 
   - [BFS&DFS](Wiki/CS/Algebra/BFS-and-DFS.md)
   - [KMP算法](Wiki/CS/Algebra/KMP算法.md)
+  - [Median of Medians](Wiki/CS/Algebra/Median-of-Medians.md)
   - [主定理](Wiki/CS/Algebra/主定理.md)
   - [优先队列](Wiki/CS/Algebra/优先队列.md)
   - [全局比对](Wiki/CS/Algebra/全局比对.md)
@@ -25,6 +26,7 @@ Welcome to my notes on entrance exams of CS Master program, IST, UTokyo and CBMS
   - [堆](Wiki/CS/Algebra/堆.md)
   - [寻路算法](Wiki/CS/Algebra/寻路算法.md)
   - [并查集](Wiki/CS/Algebra/并查集.md)
+  - [序列比对方法](Wiki/CS/Algebra/序列比对方法.md)
   - [排序](Wiki/CS/Algebra/排序.md)
   - [排序算法分析](Wiki/CS/Algebra/排序算法分析.md)
   - [时间复杂度](Wiki/CS/Algebra/时间复杂度.md)
