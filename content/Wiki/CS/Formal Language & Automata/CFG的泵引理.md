@@ -1,0 +1,104 @@
+# CFG 的泵引理
+
+## 上下文无关文法与其规范形式 | Context-Free Grammars and Their Normal Forms
+
+### 上下文无关文法 (CFG) | Context-Free Grammar (CFG)
+
+上下文无关文法是一种形式文法，用于定义上下文无关语言。CFG 由以下四元组组成：
+
+- **非终结符集合**：通常表示为 $\mathbf{N}$，包含生成句子的中间符号
+- **终结符集合**：通常表示为 $\mathbf{T}$，包含生成句子的实际符号
+- **规则集合**：通常表示为 $\mathbf{P}$，每条规则形如 $A \rightarrow \alpha$，其中 $A \in \mathbf{N}$，$\alpha \in (\mathbf{N} \cup \mathbf{T})^*$
+- **起始符**：通常表示为 $S$，是生成句子的起点
+
+A context-free grammar (CFG) is a type of formal grammar used to define context-free languages. A CFG consists of the following four components:
+
+- **Set of non-terminal symbols**: Typically denoted by $\mathbf{N}$, representing intermediate symbols in the generation of sentences.
+- **Set of terminal symbols**: Typically denoted by $\mathbf{T}$, representing actual symbols in the sentences.
+- **Set of production rules**: Typically denoted by $\mathbf{P}$, where each rule is of the form $A \rightarrow \alpha$, with $A \in \mathbf{N}$ and $\alpha \in (\mathbf{N} \cup \mathbf{T})^*$.
+- **Start symbol**: Typically denoted by $S$, representing the starting point for generating sentences.
+
+### 乔姆斯基范式 | Chomsky Normal Form (CNF)
+
+乔姆斯基范式是一种特定形式的上下文无关文法，其中每条规则都满足以下条件：
+
+1. $A \rightarrow BC$，其中 $A, B, C \in \mathbf{N}$ 且 $B$ 和 $C$ 不是起始符
+2. $A \rightarrow a$，其中 $A \in \mathbf{N}$ 且 $a \in \mathbf{T}$
+3. $S \rightarrow \epsilon$（仅当语言包含空字串时），$S$ 为起始符且 $\epsilon$ 为空字串
+
+Chomsky Normal Form is a specific form of CFG in which every rule satisfies the following conditions:
+
+1. $A \rightarrow BC$, where $A, B, C \in \mathbf{N}$ and $B$ and $C$ are not the start symbol.
+2. $A \rightarrow a$, where $A \in \mathbf{N}$ and $a$ \in $\mathbf{T}$.
+3. $S \rightarrow \epsilon$ (only if the language includes the empty string), where $S$ is the start symbol and $\epsilon$ denotes the empty string.
+
+### 格雷巴赫范式 | Greibach Normal Form (GNF)
+
+格雷巴赫范式是一种特定形式的上下文无关文法，其中每条规则都满足以下条件：
+
+1. $A \rightarrow a\alpha$，其中 $A \in \mathbf{N}$，$a \in \mathbf{T}$，且 $\alpha \in \mathbf{N}^*$
+
+Greibach Normal Form is a specific form of CFG in which every rule satisfies the following condition:
+
+1. $A \rightarrow a\alpha$, where $A \in \mathbf{N}$, $a \in \mathbf{T}$, and $\alpha \in \mathbf{N}^*$.
+
+### 上下文无关文法的泵引理 | Pumping Lemma for Context-Free Grammars
+
+上下文无关文法的泵引理用于证明某些语言不是上下文无关语言。泵引理陈述如下：
+
+如果语言 $L$ 是上下文无关语言，则存在一个常数 $p$，使得对于任何长度至少为 $p$ 的字符串 $w \in L$，$w$ 可以被分割为 $w = uvxyz$，满足：
+
+1. 对于所有 $i \geq 0$，$uv^ixy^iz \in L$
+2. $|vy| \geq 1$
+3. $|vxy| \leq p$
+
+The Pumping Lemma for Context-Free Grammars is used to prove that certain languages are not context-free. The lemma states:
+
+If a language $L$ is context-free, then there exists a constant $p$ such that for any string $w \in L$ of length at least $p$, $w$ can be decomposed as $w = uvxyz$ with the following properties:
+
+1. For all $i \geq 0$, $uv^ixy^iz \in L$
+2. $|vy| \geq 1$
+3. $|vxy| \leq p$
+
+### 使用乔姆斯基范式（CNF）证明上下文无关文法的泵引理 | Proving the Pumping Lemma for CFGs using Chomsky Normal Form (CNF)
+
+上下文无关文法的泵引理证明依赖于将 CFG 转换为乔姆斯基范式（CNF）。乔姆斯基范式的特性使得任何生成长度为 $n$ 的字符串的派生树都具有 $2n - 1$ 个节点。因此，对于长度足够长的字符串，其派生树必然包含高度超过一定常数的路径。
+
+The proof of the Pumping Lemma for context-free grammars relies on converting a CFG to Chomsky Normal Form (CNF). The properties of CNF ensure that any parse tree generating a string of length $n$ will have at most $2n - 1$ nodes. Thus, for sufficiently long strings, the parse tree must contain a path of height greater than a certain constant.
+
+#### 证明步骤 | Proof Steps
+
+1. **转换为 CNF | Conversion to CNF**
+   首先，将给定的 CFG 转换为等价的 CNF。我们确保每个产生式的右侧要么是两个非终结符的组合，要么是一个终结符。通过这种转换，生成长度为 $n$ 的字符串的最短派生树高度为 $n$。
+
+   First, convert the given CFG into an equivalent CNF. In CNF, each production rule's right-hand side consists either of two non-terminal symbols or a single terminal symbol. This conversion ensures that the minimum height of a parse tree generating a string of length $n$ is $n$.
+
+2. **构造派生树 | Construct the Parse Tree**
+   对于长度至少为 $p$ 的字符串 $w \in L$，构造其派生树，其中 $p$ 是 CNF 的泵引理常数。由于 CNF 的特性，派生树的高度至少为 $\lceil \log_2 p \rceil$。这意味着在该派生树中，至少有一条路径包含一个非终结符的重复（即，存在一个非终结符 $A$ 出现多次）。
+
+   For a string $w \in L$ with length at least $p$, construct its parse tree, where $p$ is the pumping lemma constant for CNF. Due to the properties of CNF, the height of the parse tree is at least $\lceil \log_2 p \rceil$. This means that there is at least one path in the parse tree that contains a repeated non-terminal symbol, i.e., there exists a non-terminal $A$ that appears more than once.
+
+3. **标记并分割字符串 | Marking and Splitting the String**
+   在派生树中，从根到叶子的路径上，找到第一个重复的非终结符 $A$。将派生树分成五部分：$u, v, x, y, z$，其中：
+   - $u$ 是从根到第一次出现的 $A$ 的路径生成的部分字符串
+   - $v$ 是从 $A$ 到下一次出现 $A$ 的路径生成的部分字符串
+   - $x$ 是从第二个 $A$ 到下一个非终结符的路径生成的部分字符串
+   - $y$ 是从第二个 $A$ 到终止符的路径生成的部分字符串
+   - $z$ 是从根到终止符的路径生成的剩余部分字符串
+
+   In the parse tree, on the path from the root to a leaf, locate the first repeated non-terminal $A$. Split the parse tree into five parts: $u, v, x, y, z$, where:
+
+   - $u$ is the substring generated by the path from the root to the first occurrence of $A$.
+   - $v$ is the substring generated by the path from $A$ to its next occurrence.
+   - $x$ is the substring generated by the path from the second occurrence of $A$ to the next non-terminal.
+   - $y$ is the substring generated by the path from the second occurrence of $A$ to the terminals.
+   - $z$ is the substring generated by the remaining path from the root to the terminals.
+
+4. **验证泵引理条件 | Verify the Pumping Lemma Conditions**
+   - **对于所有 $i \geq 0$，$uv^ixy^iz \in L$**: 因为 $A$ 可以被反复替代为 $vAy$，通过不断地“泵” $v$ 和 $y$，我们可以生成新的字符串，这些字符串仍然属于语言 $L$。
+   - **$|vy| \geq 1$**: 这是因为 $v$ 和 $y$ 中至少包含一个字符，否则不会有重复的非终结符。
+   - **$|vxy| \leq p$**: 因为派生树的高度至少为 $\lceil \log_2 p \rceil$，从而在路径中到达 $A$ 所需的步数小于等于 $p$，因此 $|vxy|$ 的长度不会超过 $p$。
+
+   - **For all $i \geq 0$, $uv^ixy^iz \in L$**: Since $A$ can be repeatedly replaced with $vAy$, by "pumping" $v$ and $y$, we can generate new strings that still belong to the language $L$.
+   - **$|vy| \geq 1$**: This is because $v$ and $y$ together contain at least one symbol; otherwise, there would be no repeated non-terminal.
+   - **$|vxy| \leq p$**: Since the height of the parse tree is at least $\lceil \log_2 p \rceil$, the length of the path to $A$ is bounded by $p$, ensuring that $|vxy|$ is not greater than $p$.

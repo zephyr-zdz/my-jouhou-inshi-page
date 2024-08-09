@@ -54,6 +54,12 @@ where $\lambda$ is an eigenvalue.
 
    Construct the corresponding Jordan blocks based on the eigenvalues and eigenvectors. For each eigenvalue $\lambda_i$, if its algebraic multiplicity is $m$ and its geometric multiplicity is $g$, construct $m - g$ Jordan blocks of size greater than 1.
 
+   **代数重数 (Algebraic Multiplicity):** 特征值在特征多项式中作为根出现的次数。  
+   The number of times a eigenvalue appears as a root of the characteristic polynomial.
+
+   **几何重数 (Geometric Multiplicity):** 与特征值相关的线性独立特征向量的个数，即零空间的维数。  
+   The number of linearly independent eigenvectors associated with an eigenvalue, equivalent to the dimension of the null space.
+
 3. **构造变换矩阵 Construct the Transformation Matrix**：构造变换矩阵 $\mathbf{P}$，其列向量由特征向量和广义特征向量组成。
 
    Construct the transformation matrix $\mathbf{P}$, whose column vectors consist of the eigenvectors and generalized eigenvectors.

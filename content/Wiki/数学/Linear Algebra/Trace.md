@@ -29,7 +29,7 @@ $$
 \mathrm{tr}(c\mathbf{A}) = c \cdot \mathrm{tr}(\mathbf{A})
 $$
 
-1. **迹的相似不变性 / Invariance under Similarity**
+2. **迹的相似不变性 / Invariance under Similarity**
 
 如果 $\mathbf{A}$ 和 $\mathbf{B}$ 是相似矩阵，即存在可逆矩阵 $\mathbf{P}$ 使得 $\mathbf{B} = \mathbf{P}^{-1} \mathbf{A} \mathbf{P}$，则
 
@@ -39,7 +39,7 @@ $$
 \mathrm{tr}(\mathbf{A}) = \mathrm{tr}(\mathbf{B})
 $$
 
-1. **迹与转置矩阵 / Trace and Transpose Matrix**
+3. **迹与转置矩阵 / Trace and Transpose Matrix**
 
 对于任意矩阵 $\mathbf{A}$，其转置矩阵 $\mathbf{A}^\mathrm{T}$ 的迹与其本身相等，即
 
@@ -49,7 +49,7 @@ $$
 \mathrm{tr}(\mathbf{A}) = \mathrm{tr}(\mathbf{A}^\mathrm{T})
 $$
 
-1. **迹与矩阵乘积 / Trace and Matrix Product**
+4. **迹与矩阵乘积 / Trace and Matrix Product**
 
 对于任意 $n \times n$ 矩阵 $\mathbf{A}$ 和 $\mathbf{B}$，有
 
@@ -67,7 +67,7 @@ $$
 \mathrm{tr}(\mathbf{A} \mathbf{B} \mathbf{C}) = \mathrm{tr}(\mathbf{C} \mathbf{A} \mathbf{B}) = \mathrm{tr}(\mathbf{B} \mathbf{C} \mathbf{A})
 $$
 
-1. **迹与特征值 / Trace and Eigenvalues**
+5. **迹与特征值 / Trace and Eigenvalues**
 
 对于一个 $n \times n$ 矩阵 $\mathbf{A}$，其特征值 $\lambda_1, \lambda_2, \ldots, \lambda_n$ 的和等于其迹
 
@@ -77,7 +77,7 @@ $$
 \mathrm{tr}(\mathbf{A}) = \sum_{i=1}^{n} \lambda_i
 $$
 
-1. **迹的迹（trace of the trace）/ Trace of the Trace**
+6. **迹的迹（trace of the trace）/ Trace of the Trace**
 
 若 $\mathbf{A}$ 是一个 $n \times n$ 方阵，则
 
@@ -146,3 +146,30 @@ $$
 迹是矩阵的重要性质之一，等于对角线元素的和，也等于特征值的和
 
 Trace is one of the important properties of a matrix, equal to the sum of the diagonal elements and the sum of the eigenvalues
+
+## Derivatives Involving Trace / 迹相关的导数
+
+1. **$\frac{\partial}{\partial \mathbf{A}} \mathrm{tr}(\mathbf{A}\mathbf{X}) = \mathbf{X}^T$**
+
+   When differentiating the trace of the product of matrices $\mathbf{A}$ and $\mathbf{X}$, with respect to $\mathbf{A}$, the result is the transpose of $\mathbf{X}$.
+
+   对 $\mathrm{tr}(\mathbf{A}\mathbf{X})$ 关于 $\mathbf{A}$ 求导时，结果为 $\mathbf{X}$ 的转置。
+
+2. **$\frac{\partial}{\partial \mathbf{A}} \mathrm{tr}(\mathbf{X}\mathbf{A}^T) = \mathbf{X}$**
+
+   Differentiating the trace of the product of $\mathbf{X}$ and $\mathbf{A}^T$ with respect to $\mathbf{A}$ results in $\mathbf{X}$.
+
+   对 $\mathrm{tr}(\mathbf{X}\mathbf{A}^T)$ 关于 $\mathbf{A}$ 求导时，结果为 $\mathbf{X}$。
+
+3. **$\frac{\partial}{\partial \mathbf{A}} \mathrm{tr}(\mathbf{A}\mathbf{X}\mathbf{A}^T) = \mathbf{A}(\mathbf{X} + \mathbf{X}^T)$**
+
+   When differentiating the trace of $\mathbf{A}\mathbf{X}\mathbf{A}^T$ with respect to $\mathbf{A}$, the result is $\mathbf{A}$ multiplied by the sum of $\mathbf{X}$ and its transpose.
+
+   对 $\mathrm{tr}(\mathbf{A}\mathbf{X}\mathbf{A}^T)$ 关于 $\mathbf{A}$ 求导时，结果为 $\mathbf{A}$ 乘以 $\mathbf{X}$ 和其转置之和。
+
+## Additional Notes / 额外说明
+
+- The trace of a matrix is invariant under cyclic permutations, which can often simplify expressions and calculations. For example, in certain optimization problems, the cyclic property can be used to manipulate the objective function.
+- 矩阵的迹在循环置换下不变，这通常可以简化表达式和计算。例如，在某些优化问题中，循环性质可用于操作目标函数。
+
+This overview covers the basic concepts and properties of matrix trace and its derivatives, which are essential tools in various fields such as machine learning, statistics, and applied mathematics. 这份概述涵盖了矩阵迹及其导数的基本概念和性质，这些是机器学习、统计学和应用数学等领域的重要工具。
