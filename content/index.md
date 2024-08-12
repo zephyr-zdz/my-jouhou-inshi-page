@@ -8,6 +8,16 @@ ChatGPT-4o + Claude 3.5 Sonnet generated, in both Chinese and English.
 
 Still under construction.
 
+## Contents
+
+Problems and solutions are organized by year and subject.
+
+Wiki sheets are organized by subjects of Math and CS.
+
+## How to Use
+
+You can navigate through the **Explorer** on the left sidebar or top menu.
+
 ## About
 
 This project aims to eliminate the information gap that exists in the entrance examination in Japan, especially in CS-related programs(currently focusing on CS Master program, IST, UTokyo and CBMS Master program, GSFS, UTokyo).
