@@ -4,7 +4,19 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [Component.MobileOnly(Component.Explorer())],
+  header: [Component.MobileOnly(Component.Explorer({
+    mapFn: (node) => {
+      // dont change name of root node
+      if (node.depth > 0) {
+        // set emoji for file/folder
+        if (node.file) {
+          node.displayName = "📄 " + node.displayName
+        } else {
+          node.displayName = "📁 " + node.displayName
+        }
+      }
+    },
+  }))],
   afterBody: [],
   footer: Component.Footer({
     links: {
@@ -27,7 +39,19 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      mapFn: (node) => {
+        // dont change name of root node
+        if (node.depth > 0) {
+          // set emoji for file/folder
+          if (node.file) {
+            node.displayName = "📄 " + node.displayName
+          } else {
+            node.displayName = "📁 " + node.displayName
+          }
+        }
+      },
+    })),
   ],
   right: [
     Component.Graph(),
@@ -44,7 +68,19 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      mapFn: (node) => {
+        // dont change name of root node
+        if (node.depth > 0) {
+          // set emoji for file/folder
+          if (node.file) {
+            node.displayName = "📄 " + node.displayName
+          } else {
+            node.displayName = "📁 " + node.displayName
+          }
+        }
+      },
+    })),
   ],
   right: [],
 }
