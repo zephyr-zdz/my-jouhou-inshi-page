@@ -4,11 +4,11 @@ import * as Component from "./quartz/components"
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
-  header: [],
+  header: [Component.MobileOnly(Component.Explorer())],
   afterBody: [],
   footer: Component.Footer({
     links: {
-      Homepages: "https://zephyr-zdz.space",
+      Me: "https://zephyr-zdz.space",
       Thanks: "https://runjp.com",
     },
   }),
