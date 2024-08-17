@@ -44,11 +44,11 @@ Now, we evaluate the two integrals separately.
 
 1. Integral of $\cos((n-m)\pi x)$:
 
-
    $\cos((n-m)\pi x)$ 的积分：
 
    $$
    \int_0^1 \cos((n-m)\pi x) \, \mathrm{d}x.
+
 
 $$
 

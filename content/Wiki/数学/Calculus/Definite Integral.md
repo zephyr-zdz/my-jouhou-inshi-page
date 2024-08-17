@@ -1,4 +1,4 @@
-# Definite Integrals Cheat Sheet
+# Definite Integrals / 定积分
 
 ## Introduction / 介绍
 
@@ -34,6 +34,7 @@ $$
 
    $$
    \int_{a}^{b} [cf(x) + g(x)] \, dx = c\int_{a}^{b} f(x) \, dx + \int_{a}^{b} g(x) \, dx
+
 
 $$
 

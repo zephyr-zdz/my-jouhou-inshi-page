@@ -1,6 +1,4 @@
-# Fourier Transform
-
-# 傅里叶变换
+# 傅里叶变换 | Fourier Transform
 
 ## 1. Introduction 简介
 

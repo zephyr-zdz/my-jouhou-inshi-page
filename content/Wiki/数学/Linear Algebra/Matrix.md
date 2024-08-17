@@ -68,6 +68,7 @@ $$
    a_{m1} + b_{m1} & a_{m2} + b_{m2} & \cdots & a_{mn} + b_{mn}
    \end{pmatrix}
 
+
 $$
 
 2. **矩阵减法 (Matrix Subtraction)**
